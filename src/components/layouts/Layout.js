@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import { Toaster } from "react-hot-toast";
 
 function Layout({ children }) {
   const style = { minHeight: "70vh" };
@@ -19,6 +20,7 @@ function Layout({ children }) {
       <Header />
       <div style={style}>{children}</div>
       <Footer />
+      <Toaster/>
     </>
   );
 }

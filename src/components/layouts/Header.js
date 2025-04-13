@@ -5,8 +5,11 @@ import { FiLogIn } from "react-icons/fi";
 import { FaUserAlt } from "react-icons/fa";
 import styles from "../layouts/Header.module.css";
 import ThemeToggle from "@/template/ThemeToggle";
+import { useSession } from "next-auth/react";
 
 function Header() {
+  const { data: session, status } = useSession();
+
   return (
     <header className={styles.header}>
       <div>
@@ -19,19 +22,24 @@ function Header() {
           </li>
         </ul>
       </div>
-      {/* <div className={styles.login}>
-        <Link href="/dashboard">
-          <FaUserAlt />
-        </Link>
-        <ThemeToggle />
-      </div> */}
-      <div className={styles.login}>
-        <Link href="/signin">
-          <FiLogIn />
-          <span>ورود</span>
-        </Link>
-        <ThemeToggle />
-      </div>
+
+      {status === "authenticated" ? (
+        <div className={styles.login}>
+          <Link href="/dashboard">
+            <FaUserAlt />
+            <span>{session.user.name}</span>
+          </Link>
+          <ThemeToggle />
+        </div>
+      ) : (
+        <div className={styles.login}>
+          <Link href="/signin">
+            <FiLogIn />
+            <span>ورود</span>
+          </Link>
+          <ThemeToggle />
+        </div>
+      )}
     </header>
   );
 }

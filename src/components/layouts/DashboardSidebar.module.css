@@ -11,28 +11,28 @@
   height: fit-content;
   padding: 30px 15px;
   border-radius: 10px;
-  box-shadow: #304ffe4a 0px 4px 15px;
+  box-shadow: var(--shadow-base);
   margin-left: 40px;
   width: 220px;
 }
 
 .sidebar svg {
   font-size: 3rem;
-  color: #304ffe;
+  color: var(--color-secondary);
 }
 
 .sidebar p {
-  color: grey;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 400;
   margin-top: 20px;
 }
 
 .sidebar span {
-  background-color: #304ffe;
+  background-color: var(--color-primary);
   width: 100%;
   height: 1px;
-  background-color: silver;
+  background-color: var(--color-muted);
   margin-bottom: 30px;
 }
 
@@ -40,6 +40,9 @@
   margin: 5px 0;
   font-weight: 400;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .main {
