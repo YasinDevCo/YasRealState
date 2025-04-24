@@ -4,8 +4,8 @@ import style from "./SignupPage.module.css"
 import Link from 'next/link'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
-import { ThreeDots } from 'react-loader-spinner'
 import { signIn } from 'next-auth/react'
+import Loader from '../modules/Loader'
 
 function SigninPage() {
     const [email, setEmail] = useState('')
@@ -50,7 +50,7 @@ function SigninPage() {
                 <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 {loading
-                    ? <ThreeDots wrapperStyle={{ margin: 'auto' }} color="#00BFFF" height={40} width={50} />
+                    ?<Loader/>
                     : <button type='submit'>ورود</button>
                 }
 

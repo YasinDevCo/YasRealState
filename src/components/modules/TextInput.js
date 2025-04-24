@@ -15,7 +15,7 @@ function TextInput({
 
   return (
     <div className={styles.container}>
-      <p>{title}</p>
+      <p>{title} :</p>
       {textarea ? (
         <textarea
           type="text"
