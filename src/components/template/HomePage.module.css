@@ -1,0 +1,133 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  margin: 80px 0;
+  border-radius: 12px;
+  background-color: #304ffe18;
+}
+
+.desc {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.desc h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 24px;
+}
+
+.desc ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.desc li {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.desc span {
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+/* بخش دسته‌بندی‌ها */
+.categor {
+  margin: 80px 0;
+  width: 100%;
+}
+.categories {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* بخش شهرها */
+.city {
+  margin: 80px 0;
+  width: 100%;
+}
+
+.city h3,
+.categor h3 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 40px;
+}
+
+.city ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.city li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #304ffe18;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  width: 220px;
+}
+
+.city span {
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+/* ریسپانسیو */
+@media (max-width: 1000px) {
+  .banner {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 600px) {
+  .desc h1 {
+    font-size: 2rem;
+  }
+
+  .categories {
+    justify-content: flex-start;
+  }
+  .city {
+    width: 100%;
+  }
+
+  .city li {
+    padding: 8px 13px;
+    justify-content: center;
+
+    width: 45%;
+  }
+}
+@media (max-width: 380px) {
+  .city ul {
+    justify-content: space-between;
+  }
+}

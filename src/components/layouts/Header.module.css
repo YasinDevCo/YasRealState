@@ -19,7 +19,7 @@
 .header ul li {
   margin-left: 30px;
 }
-.login{
+.login {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -29,7 +29,7 @@
   align-items: center;
   background-color: var(--color-white);
   color: var(--color-primary);
-  padding: 3px 7px;
+  padding: 3px 6px;
   border-radius: 5px;
   transition: all ease-in 0.1s;
 }
@@ -46,9 +46,43 @@
 .login span {
   margin-right: 5px;
 }
-
+.btnMenu {
+  display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.hideMenu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 65%;
+  background-color: var(--color-primary);
+  height: 100%;
+  padding:40px 40px;
+  opacity: 0.95;
+}
+.hideMenu ul li {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
 @media (max-width: 600px) {
+  .btnClose{
+    display: none;
+  }
   .header ul li {
     margin-left: 10px;
+  }
+  .header div:first-child {
+    display: none;
+  }
+  .btnMenu {
+    display: flex;
+  }
+  .hideMenu {
+    display: flex;
   }
 }
