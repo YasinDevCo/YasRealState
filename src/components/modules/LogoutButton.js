@@ -8,8 +8,9 @@ function LogoutButton() {
   return (
     <button className={styles.button} onClick={signOut}>
       <FiLogOut />
-      خروج
-    </button>
+      <span>
+        خروج
+      </span>    </button>
   );
 }
 

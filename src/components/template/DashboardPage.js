@@ -2,6 +2,10 @@ import styles from "./DashboardPage.module.css";
 
 function DashboardPage({ createdAt }) {
   return (
+    <>
+     <div className="topMargin">
+        <br />
+      </div>
     <div className={styles.container}>
       <h3>سلام 👋</h3>
       <p>آگهی های خود را ثبت کنید تا هزاران نفر آن را مشاهده کنند</p>
@@ -10,6 +14,7 @@ function DashboardPage({ createdAt }) {
         <span>{new Date(createdAt).toLocaleDateString("fa-IR")}</span>
       </div>
     </div>
+    </>
   );
 }
 

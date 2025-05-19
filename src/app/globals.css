@@ -118,7 +118,9 @@ textarea {
 .go-home-btn:hover {
   filter: brightness(1.1);
 }
-
+.topMargin{
+  display: none;
+}
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -126,4 +128,10 @@ textarea {
   50% {
     transform: translateY(-10px);
   }
+}
+
+@media (max-width: 800px) {
+.topMargin{
+  display: block;
+}
 }

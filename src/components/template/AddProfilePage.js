@@ -68,72 +68,76 @@ function AddProfilePage({ data }) {
         }
     }
     return (
-
-        <div className={styles.container}>
-            <h3>{data ? "ویرایش کاربر" : 'افزودن کاربر'}</h3>
-            <div className={styles.items}>
-                <div className={styles.item}>
-                    <TextInput
-                        title="عنوان آگهی"
-                        name="title"
-                        profileData={profileData}
-                        setProfileData={setProfileData}
-                    />
-                </div>
-                <div className={styles.item}>
-                    <TextInput
-                        title="شماره تماس"
-                        name="phone"
-                        profileData={profileData}
-                        setProfileData={setProfileData}
-                    />
-                </div>
-                <div className={styles.item}>
-                    <TextInput
-                        title="قیمت(تومان)"
-                        name="price"
-                        profileData={profileData}
-                        setProfileData={setProfileData}
-                    />
-                </div>
-                <div className={styles.item}>
-                    <TextInput
-                        title="بنگاه"
-                        name="realState"
-                        profileData={profileData}
-                        setProfileData={setProfileData}
-                    />
-                </div>
-
-
-
+        <>
+            <div className="topMargin">
+                <br />
             </div>
-            <TextInput
-                title="آدرس"
-                name="location"
-                profileData={profileData}
-                setProfileData={setProfileData}
-            />
-            <TextInput
-                title="توضیحات"
-                name="description"
-                profileData={profileData}
-                setProfileData={setProfileData}
-                textarea={true}
-            />
-            <RadioList profileData={profileData} setProfileData={setProfileData} />
-            <div className={styles.items}>
+            <div className={styles.container}>
+                <h3>{data ? "ویرایش کاربر" : 'افزودن کاربر'}</h3>
+                <div className={styles.items}>
+                    <div className={styles.item}>
+                        <TextInput
+                            title="عنوان آگهی"
+                            name="title"
+                            profileData={profileData}
+                            setProfileData={setProfileData}
+                        />
+                    </div>
+                    <div className={styles.item}>
+                        <TextInput
+                            title="شماره تماس"
+                            name="phone"
+                            profileData={profileData}
+                            setProfileData={setProfileData}
+                        />
+                    </div>
+                    <div className={styles.item}>
+                        <TextInput
+                            title="قیمت(تومان)"
+                            name="price"
+                            profileData={profileData}
+                            setProfileData={setProfileData}
+                        />
+                    </div>
+                    <div className={styles.item}>
+                        <TextInput
+                            title="بنگاه"
+                            name="realState"
+                            profileData={profileData}
+                            setProfileData={setProfileData}
+                        />
+                    </div>
 
-                <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={'amenities'} />
-                <TextList title={"قوانین"} profileData={profileData} setProfileData={setProfileData} type={'rules'} />
+
+
+                </div>
+                <TextInput
+                    title="آدرس"
+                    name="location"
+                    profileData={profileData}
+                    setProfileData={setProfileData}
+                />
+                <TextInput
+                    title="توضیحات"
+                    name="description"
+                    profileData={profileData}
+                    setProfileData={setProfileData}
+                    textarea={true}
+                />
+                <RadioList profileData={profileData} setProfileData={setProfileData} />
+                <div className={styles.items}>
+
+                    <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={'amenities'} />
+                    <TextList title={"قوانین"} profileData={profileData} setProfileData={setProfileData} type={'rules'} />
+                </div>
+                <CustomDatePicker profileData={profileData} setProfileData={setProfileData} />
+                {loading
+                    ? <Loader />
+                    : data
+                        ? <button className={styles.submit} onClick={editHandler}>ویرایش اگهی</button>
+                        : <button className={styles.submit} onClick={submitHandler}>ثبت اگهی</button>}
             </div>
-            <CustomDatePicker profileData={profileData} setProfileData={setProfileData} />
-            {loading
-                ? <Loader />
-                : data
-                    ? <button className={styles.submit} onClick={editHandler}>ویرایش اگهی</button>
-                    : <button className={styles.submit} onClick={submitHandler}>ثبت اگهی</button>}
-        </div>
+        </>
     )
 }
 

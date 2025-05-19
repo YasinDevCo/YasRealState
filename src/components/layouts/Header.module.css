@@ -62,15 +62,15 @@
   width: 65%;
   background-color: var(--color-primary);
   height: 100%;
-  padding:40px 40px;
+  padding: 40px 40px;
   opacity: 0.95;
 }
 .hideMenu ul li {
   margin-bottom: 20px;
   cursor: pointer;
 }
-@media (max-width: 600px) {
-  .btnClose{
+@media (max-width: 800px) {
+  .btnClose {
     display: none;
   }
   .header ul li {
