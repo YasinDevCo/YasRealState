@@ -27,7 +27,7 @@ function AddProfilePage({ data }) {
 
     useEffect(() => {
         if (data) setProfileData(data)
-    }, [])
+    }, [data])
 
     const submitHandler = async (e) => {
         e.preventDefault()

@@ -24,3 +24,12 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  @media (max-width: 800px) {
+   .main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  }

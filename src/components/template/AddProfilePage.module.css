@@ -21,7 +21,7 @@
   gap: 10px;
   width: 100%;
 }
-.container .items .item{
+.container .items .item {
   width: calc(100% / 4 - 10px);
 }
 .submit {
@@ -37,4 +37,17 @@
 
 .submit:hover {
   transform: scale(1.01);
+}
+
+@media (max-width: 800px) {
+  .container .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  .container .items .item {
+    width: 100%;
+  }
 }

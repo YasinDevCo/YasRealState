@@ -37,16 +37,21 @@ function DashboardCard({ data }) {
       <Card data={data} />
       <div className={styles.main}>
         <button onClick={editHandler}>
-          ویرایش
+          <span>
+            ویرایش
+          </span>
           <FiEdit />
         </button>
-       {loading ? <button>
-          درحال حذف  ...
-        </button> :<button onClick={deleteHandler} >
-          حذف آگهی
+        {loading ? <button>
+          <span>
+            درحال حذف  ...
+          </span>
+        </button> : <button onClick={deleteHandler} >
+          <span>حذف آگهی
+          </span>
           <AiOutlineDelete />
         </button>}
-       
+
       </div>
       <Toaster />
     </div>
