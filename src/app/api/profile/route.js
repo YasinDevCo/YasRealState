@@ -2,29 +2,31 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { Types } from "mongoose";
 import User from "@/models/User";
-import Profile from "@/models/Profile";
 import connectDB from "@/utils/connectDB";
+import Profiles from "@/models/Profile";
 
 export async function GET() {
   try {
+    console.log("Trying to connect to DB...");
     await connectDB();
+    console.log("DB connected.");
 
-    const profiles = await Profile.find({ published: true }).select("-userId");
+    const profiles = await Profiles.find().select("-userId");
+    console.log("Profiles fetched:", profiles);
 
     return NextResponse.json(
-      {
-        data: profiles,
-      },
+      { data: profiles },
       { status: 200 }
     );
   } catch (err) {
-    console.log(err);
+    console.error("Error in GET route:", err);
     return NextResponse.json(
       { error: "مشکلی در سرور رخ داده است" },
       { status: 500 }
     );
   }
 }
+
 
 export async function POST(req) {
   try {
@@ -76,9 +78,19 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+    console.log(title,
+      description,
+      location,
+      phone,
+      realState,
+      price,
+      constructionDate,
+      category,
+      amenities,
+      rules,);
 
 
-    const newProfile = await Profile.create({
+    const newProfile = await Profiles.create({
       title,
       description,
       location,
@@ -91,11 +103,14 @@ export async function POST(req) {
       price: +price,
       userId: new Types.ObjectId(user._id),
     });
+    console.log(newProfile);
+
     return NextResponse.json(
       { message: "آگهی جدید اضافه شد" },
       { status: 201 }
     );
   } catch (err) {
+    console.error("Server Error:", err); // ← اضافه کنید
     return NextResponse.json(
       { error: "مشکلی در سرور رخ داده است" },
       { status: 500 }
@@ -156,7 +171,7 @@ export async function PATCH(req) {
       );
     }
 
-    const profile = await Profile.findOne({ _id });
+    const profile = await Profiles.findOne({ _id });
     if (!user._id.equals(profile.userId)) {
       return NextResponse.json(
         {

@@ -55,6 +55,6 @@ const profileSchema = new Schema(
   { timestamps: true }
 );
 
-const Profile = models.Profile || model("Profile", profileSchema);
+const Profiles = models.Profile || model("Profile", profileSchema);
 
-export default Profile;
+export default Profiles;

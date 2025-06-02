@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.container button {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--color-gray);
+  height: 20px;
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+}
+
+.container:hover button {
+  color: var(--color-primary);
+}
+
+.container svg {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+@media (max-width: 800px) {
+ 
+}

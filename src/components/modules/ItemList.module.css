@@ -1,0 +1,34 @@
+.container {
+  border-radius: 12px;
+  /* padding: 1.5rem; */
+  max-width: fit-content;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container li {
+  background-color: var( --color-light-gray-2);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+
+.container p {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+}
+@media (max-width: 800px) {
+.container{
+  max-width: 100%;
+}
+}

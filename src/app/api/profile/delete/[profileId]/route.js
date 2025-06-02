@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth";
-import Profile from "@/models/Profile";
 import User from "@/models/User";
+import Profiles from "@/models/Profile";
 
 export async function DELETE(req, context) {
   try {
@@ -30,7 +30,7 @@ export async function DELETE(req, context) {
       );
     }
 
-    const profile = await Profile.findOne({ _id: id });
+    const profile = await Profiles.findOne({ _id: id });
     if (!user._id.equals(profile.userId)) {
       return NextResponse.json(
         {
@@ -40,7 +40,7 @@ export async function DELETE(req, context) {
       );
     }
 
-    await Profile.deleteOne({ _id: id });
+    await Profiles.deleteOne({ _id: id });
 
     return NextResponse.json(
       { message: "آگهی موردنظر حذف شد" },

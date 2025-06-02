@@ -3,6 +3,7 @@
   --color-secondary: #20c997;
   --color-gray: #6c757d; /* خاکستری کمی تیره‌تر برای خوانایی بیشتر */
   --color-light-gray: #e9ecef; /* خاکستری روشن‌تر */
+  --color-light-gray-2: #f4f4f497; /* خاکستری روشن‌تر */
   --color-white: #ffffff;
 
   --color-accent: #ff8c00; /* نارنجی کمی تیره‌تر و شیک‌تر از #ffa500 */
@@ -22,6 +23,8 @@
   --color-secondary: #38d9a9;
   --color-gray: #ced4da;
   --color-light-gray: #2b2b2b;
+  --color-light-gray-2: #f4f4f41c; /* خاکستری روشن‌تر */
+
   --color-white: #1c1c1e;
 
   --color-accent: #ffb347;

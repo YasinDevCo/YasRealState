@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 function Header() {
   const { data: session, status } = useSession();
   const [btnToggle, setBtnToggle] = useState(false)
-  
+
   return (
     <>
       <header className={styles.header}>
