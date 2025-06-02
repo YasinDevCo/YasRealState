@@ -5,7 +5,7 @@
   box-shadow: var(--shadow-base);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
-  /* margin: px; */
+  
   text-align: center;
   cursor: pointer;
 }
@@ -27,6 +27,23 @@
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--color-primary);
+}
+@media (max-width: 800px) {
+  .card {
+    width: calc(100% / 2 - 20px);
+    padding: 4px;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  .card img {
+  height: 120px;
+    border-radius: 10px;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 430px) {
   .card {

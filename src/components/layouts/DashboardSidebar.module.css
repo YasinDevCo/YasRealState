@@ -47,8 +47,13 @@
 .main {
   width: 100%;
 }
+.main .link {
+  display: flex;
+  align-items: center;
+}
 .link span {
   border: none;
+  margin-top: 10px !important ;
 }
 .topDashboard {
   display: flex;
@@ -64,9 +69,8 @@
     display: none !important;
   }
   .hide2 {
-  display: flex !important;
-  
-}
+    display: flex !important;
+  }
   .topDashboard {
     display: none !important;
   }
