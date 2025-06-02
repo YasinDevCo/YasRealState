@@ -6,7 +6,6 @@
   display: flex;
   font-size: 1.2rem;
   font-weight: 400;
-  
 }
 
 .container p svg {
@@ -18,14 +17,24 @@
 .container a {
   color: var(--color-gray);
   margin: 5px;
+  
 }
 
 @media (max-width: 800px) {
   .container {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 0;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
+  }
+  .container p {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .container a{
+    font-size: .9rem;
   }
 }
