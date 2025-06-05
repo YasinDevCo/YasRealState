@@ -16,7 +16,7 @@
   --text-primary: #212529;
   --text-secondary: #495057;
   --text-light: #ffffff;
-
+  --menue-color: #ffffff;
   --shadow-base: 0 4px 14px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.18);
 }
@@ -37,6 +37,7 @@
   --text-primary: #f8f9fa;
   --text-secondary: #dee2e6;
   --text-light: #ffffff;
+  --menue-color: #111;
 
   --color-danger: #dc3545; /* قرمز هشدار دهنده (bootstrap style) */
   --color-danger-hover: #c82333; /* تیره‌تر برای حالت هاور */
@@ -143,5 +144,8 @@ textarea {
 @media (max-width: 800px) {
   .topMargin {
     display: block;
+  }
+  .theme {
+    font-size: 1.7rem;
   }
 }

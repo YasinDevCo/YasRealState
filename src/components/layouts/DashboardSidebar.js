@@ -6,6 +6,8 @@ import styles from "../layouts/DashboardSidebar.module.css";
 import LogoutButton from "../modules/LogoutButton";
 import { FiLogOut } from "react-icons/fi";
 import { FaClock, FaHourglassHalf } from "react-icons/fa";
+import { signOut } from "next-auth/react";
+import LogoutButton2 from "../modules/LogoutButton2";
 
 async function DashboardSidebar({ children, role,
   email }) {
@@ -40,9 +42,7 @@ async function DashboardSidebar({ children, role,
           <MdPendingActions size={25} />
           <span>درانتظار تایید </span>
         </Link>}
-        <Link href={'#'} className={styles.hide2}>
-          <FiLogOut size={25} color="rgb(219, 5, 5)" />
-        </Link>
+        <LogoutButton2/>
         <Link href={'#'} className={styles.hide1} >
           <LogoutButton />
         </Link>

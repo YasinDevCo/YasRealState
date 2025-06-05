@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { FiLogIn } from "react-icons/fi";
-import { FaUserAlt } from "react-icons/fa";
+import {FaUserAlt } from "react-icons/fa";
 import styles from "../layouts/Header.module.css";
 import ThemeToggle from "@/template/ThemeToggle";
 import { useSession } from "next-auth/react";
-import { BiCloset, BiMenu } from "react-icons/bi";
-import { CgClose } from "react-icons/cg";
-import { useEffect, useState } from "react";
+import { GrHomeRounded } from "react-icons/gr";
+import { AiOutlineProduct } from "react-icons/ai";
+import { GoPerson } from "react-icons/go";
+import { IoLogInOutline } from "react-icons/io5";
 
 function Header() {
   const { data: session, status } = useSession();
-  const [btnToggle, setBtnToggle] = useState(false)
 
   return (
     <>
@@ -27,7 +27,7 @@ function Header() {
             </li>
           </ul>
         </div>
-        <button className={styles.btnMenu} onClick={() => setBtnToggle(true)}><BiMenu size={32} /></button>
+
 
 
         {status === "authenticated" ? (
@@ -51,24 +51,35 @@ function Header() {
           </div>
         )}
       </header>
-      {btnToggle && <div className={styles.hideMenu}>
-        <ul>
-          <li onClick={() => setBtnToggle(false)}>
-            <CgClose size={30} />
-          </li>
-          <li>
-            <Link href="/">صفحه اصلی</Link>
-          </li>
-          <li>
-            <Link href="/buy-residential">آگهی ها</Link>
-          </li>
-          <li>
-            تغییر تم :<ThemeToggle />
-          </li>
-        </ul>
+  
 
-      </div>}
 
+      <header className={styles.headerMobile}>
+
+        <Link href="/"><GrHomeRounded size={26} /></Link>
+
+        <Link href="/buy-residential"> <AiOutlineProduct size={30} />
+        </Link>
+
+
+
+        {status === "authenticated" ? (
+          < >
+            <Link href="/dashboard">
+              <GoPerson size={30} />
+            </Link>
+            <ThemeToggle />
+          </>
+        ) : (
+          <>
+            <Link href="/signin">
+              <IoLogInOutline size={30}  />
+            </Link>
+            <ThemeToggle />
+          </>
+        )}
+
+      </header>
     </>
   );
 }
