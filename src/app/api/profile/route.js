@@ -7,13 +7,9 @@ import Profiles from "@/models/Profile";
 
 export async function GET() {
   try {
-    console.log("Trying to connect to DB...");
     await connectDB();
-    console.log("DB connected.");
-
-    const profiles = await Profiles.find().select("-userId");
-    console.log("Profiles fetched:", profiles);
-
+    const profiles = await Profiles.find({ published: true }).select("-userId");
+    
     return NextResponse.json(
       { data: profiles },
       { status: 200 }
@@ -78,16 +74,7 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    console.log(title,
-      description,
-      location,
-      phone,
-      realState,
-      price,
-      constructionDate,
-      category,
-      amenities,
-      rules,);
+   
 
 
     const newProfile = await Profiles.create({
@@ -103,7 +90,6 @@ export async function POST(req) {
       price: +price,
       userId: new Types.ObjectId(user._id),
     });
-    console.log(newProfile);
 
     return NextResponse.json(
       { message: "آگهی جدید اضافه شد" },
@@ -202,7 +188,6 @@ export async function PATCH(req) {
       }
     );
   } catch (err) {
-    console.log(err);
     return NextResponse.json(
       { error: "مشکلی در سرور رخ داده است" },
       { status: 500 }

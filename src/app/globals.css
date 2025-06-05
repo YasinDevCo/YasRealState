@@ -10,6 +10,9 @@
   --color-dark: #343a40; /* رنگ تیره تمیز برای منو/فوتر */
   --color-muted: #adb5bd;
 
+  --color-danger: rgb(219, 5, 5); /* قرمز هشدار دهنده (bootstrap style) */
+  --color-danger-hover: #e30017e7; /* تیره‌تر برای حالت هاور */
+
   --text-primary: #212529;
   --text-secondary: #495057;
   --text-light: #ffffff;
@@ -35,6 +38,9 @@
   --text-secondary: #dee2e6;
   --text-light: #ffffff;
 
+  --color-danger: #dc3545; /* قرمز هشدار دهنده (bootstrap style) */
+  --color-danger-hover: #c82333; /* تیره‌تر برای حالت هاور */
+
   --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.25);
   --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
@@ -46,7 +52,6 @@
   font-weight: 200;
   transition: background-color 0.3s ease, color 0.3s ease;
   list-style: none;
-
 }
 
 html,
@@ -72,10 +77,8 @@ textarea {
   font-family: inherit;
 }
 
-
-
 .notFound {
-  background-color:transparent;
+  background-color: transparent;
   color: var(--text-primary);
   height: 100% !important;
   display: flex;
@@ -121,11 +124,15 @@ textarea {
 .go-home-btn:hover {
   filter: brightness(1.1);
 }
-.topMargin{
+.topMargin {
   display: none;
 }
+
+/*  */
+
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -134,7 +141,7 @@ textarea {
 }
 
 @media (max-width: 800px) {
-.topMargin{
-  display: block;
-}
+  .topMargin {
+    display: block;
+  }
 }

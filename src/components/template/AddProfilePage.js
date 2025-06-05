@@ -45,7 +45,6 @@ function AddProfilePage({ data }) {
             toast.success(data.message);
             router.refresh();
         }
-        console.log(profileData);
 
     }
     const editHandler = async () => {

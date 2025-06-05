@@ -1,0 +1,112 @@
+/* .delete_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: var(--color-danger) !important;
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-base);
+  transition: all 0.2s ease-in-out;
+}
+
+.delete_button:hover {
+  background-color: var(--color-danger-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+} */
+.delete_button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-danger) !important;
+  border: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all ease-in 0.1s;
+  margin-right: 5px;
+}
+
+.delete_button:hover {
+  background-color: transparent !important;
+  color: var(--color-danger) !important;
+  border: 1px solid var(--color-danger) !important;
+}
+
+.modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal_box {
+  background-color: var(--color-white);
+  color: var(--text-primary);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-hover);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal_box h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal_box p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.modal_actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirm_btn {
+  padding: 8px 16px;
+  background-color: var(--color-danger);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirm_btn:hover {
+  background-color: var(--color-danger-hover);
+}
+
+.cancel_btn {
+  padding: 8px 16px;
+  background-color: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cancel_btn:hover {
+  border: 1px solid var(--color-danger) !important;
+  color: var(--color-danger) !important;
+}

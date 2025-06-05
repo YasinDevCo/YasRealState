@@ -1,24 +1,24 @@
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
-import { MdOutlineFormatListBulleted } from "react-icons/md";
+import { MdOutlineFormatListBulleted, MdPending, MdPendingActions } from "react-icons/md";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "../layouts/DashboardSidebar.module.css";
 import LogoutButton from "../modules/LogoutButton";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FiLogOut } from "react-icons/fi";
+import { FaClock, FaHourglassHalf } from "react-icons/fa";
 
-async function DashboardSidebar({ children }) {
+async function DashboardSidebar({ children, role,
+  email }) {
 
 
-  const session = await getServerSession(authOptions)
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
 
         <div className={styles.topDashboard}>
           <CgProfile size={40} />
-          <p>{session?.user.email}</p>
+          {role === "ADMIN" ? "ادمین" : null}
+          <p>{email}</p>
           <span></span>
         </div>
 
@@ -36,6 +36,10 @@ async function DashboardSidebar({ children }) {
           <AiOutlinePlusCircle size={25} />
           <span>ثبت آگهی</span>
         </Link>
+        {role === "ADMIN" && <Link href="/admin" className={styles.link}>
+          <MdPendingActions size={25} />
+          <span>درانتظار تایید </span>
+        </Link>}
         <Link href={'#'} className={styles.hide2}>
           <FiLogOut size={25} color="rgb(219, 5, 5)" />
         </Link>

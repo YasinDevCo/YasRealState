@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import connectDB from "@/utils/connectDB";
-import Profile from "@/models/Profile";
 import User from "@/models/User";
+import Profiles from "@/models/Profile";
 
 export async function PATCH(req, context) {
     try {
@@ -38,16 +38,16 @@ export async function PATCH(req, context) {
             );
         }
 
-        const profile = await Profile.findOne({ _id: id });
+        const profile = await Profiles.findOne({ _id: id });
         profile.published = true;
         profile.save();
 
         return NextResponse.json({ message: "آگهی منتشر شد" }, { status: 200 });
     } catch (err) {
-        console.log(err);
         return NextResponse.json(
             { error: "مشکلی در سرور رخ داده است" },
             { status: 500 }
         );
     }
 }
+
